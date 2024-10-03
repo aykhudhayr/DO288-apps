@@ -1,10 +1,9 @@
 # Use the httpd-parent image as base
 FROM quay.io/redhattraining/httpd-parent
-RUN mkdir -p /var/www/html/html.index && echo "hi my name is ayk" &&  rm -rf /run/httpd && mkdir /run/httpd 
-LABEL version="1.0" description="this is ConFile" maintainer=”RedHatTraining<training@redhat.com>”
-# DocumentRoot For Apache 
+RUN mkdir -p  /var/www/html  && echo "hi" > /var/www/html/index.html && rm -rf  /run/httpd && mkdir /run/httpd && yum install -y m4
 ENV DOCROOT=/var/www/html
-#allow child 
-ONBUILD COPY src/ ${DOCROOT}/
-# PORT
-EXPOSE 80
+ONBUILD COPY src/ ${DOCROOT}
+EXPOSE  80
+CMD /usr/sbin/httpd -DFORGROUND
+LABEL version="1.0" description="this is Containerfile" maintainer="RedHatTraining"
+
