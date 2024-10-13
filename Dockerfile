@@ -4,6 +4,5 @@ RUN mkdir -p /var/www/html && echo "hi" > /var/www/html/index.html && rm -rf /ru
 LABEL version="1.0" description="this is cofile" maintainer="redhat"
 ENV DOCROOT=/var/www/html
 ONBUILD COPY src/ ${DOCROOT}
-EXPOSE 80 
 CMD  /usr/sbin/httpd -DFORGROUN
 
