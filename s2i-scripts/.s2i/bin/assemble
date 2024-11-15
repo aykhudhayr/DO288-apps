@@ -9,15 +9,10 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
+cp -Rf /tmp/src/.*html ./
+date "+%F" >./info.html
+echo >> "Astra inclinant, sed non obligant" >> ./info.html
 
-echo "---> Installing application source"
-cp -Rf /tmp/src/*.html ./
-
-DATE=`date "+%b %d, %Y @ %H:%M %p"`
-
-echo "---> Creating info page"
-echo "Page built on $DATE" >> ./info.html
-echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
 
 ######## CUSTOMIZATION ENDS HERE ############
 
