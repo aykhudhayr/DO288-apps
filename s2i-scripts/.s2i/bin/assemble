@@ -10,10 +10,8 @@ config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
 cp -Rf /tmp/src/.*html ./
-date "+%F" >./info.html
-echo >> "Astra inclinant, sed non obligant" >> ./info.html
-
-
+date "+%b %d, %Y @ %H %M %p" > ./infohtml
+echo "Astra inclinant, sed non obligant" >> ./info.html
 ######## CUSTOMIZATION ENDS HERE ############
 
 if [ -d ./httpd-cfg ]; then
