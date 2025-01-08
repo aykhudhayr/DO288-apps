@@ -9,7 +9,7 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
-cp -Rf  cp -Rf /tmp/src/*.html ./ 
+cp -Rf  /tmp/src/*.html ./ 
 date "+%b %d, %Y @ %H %M %p" > ./info.html
 echo "Astra inclinant, sed non oblaigant" >> ./info.html
 ######## CUSTOMIZATION ENDS HERE ############
